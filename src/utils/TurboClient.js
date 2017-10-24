@@ -1,6 +1,6 @@
 import turbo from 'turbo360'
-import pkg from '../../package.json'
-const APP_ID = pkg.app || ''
+//import pkg from '../../package.json'
+const APP_ID = '59ef7d00faf4920012e2aa51'
 
 const postRequest = (resource, params, actionType) => {
 	return dispatch => turbo({site_id:APP_ID}).create(resource, params)

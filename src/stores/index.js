@@ -20,8 +20,8 @@ export default {
 			if (module.hot) {
 				module.hot.accept(() => {
 					const nextRootReducer = reducers
-					store.replaceReducer(nextRootReducer);
-				});
+					store.replaceReducer(nextRootReducer)
+				})
 			}
 			return store
 		}
@@ -30,7 +30,12 @@ export default {
 		    reducers,
 		    applyMiddleware(thunk)
 		)
-
+		if (module.hot) {
+			module.hot.accept(() => {
+				const nextRootReducer = reducers
+				store.replaceReducer(nextRootReducer)
+			})
+		}
 		return store
 	},
 
