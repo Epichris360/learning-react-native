@@ -5,10 +5,12 @@
 * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 */
 
-import Users from './Users'
-
+import Users      from './Users'
+import SignUp     from './SignUp'
+import SignIn 	  from './SignIn'
+import MainScreen from './MainScreen'
 export {
 
-	Users
-	
+	Users, SignUp, SignIn, MainScreen
+
 }

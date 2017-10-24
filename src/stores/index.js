@@ -17,12 +17,12 @@ export default {
 				initialState,
 				applyMiddleware(thunk)
 			)
-			if (module.hot) {
+			/*if (module.hot) {
 				module.hot.accept(() => {
 					const nextRootReducer = reducers
 					store.replaceReducer(nextRootReducer)
 				})
-			}
+			}*/
 			return store
 		}
 
@@ -30,12 +30,12 @@ export default {
 		    reducers,
 		    applyMiddleware(thunk)
 		)
-		if (module.hot) {
+		/*if (module.hot) {
 			module.hot.accept(() => {
 				const nextRootReducer = reducers
 				store.replaceReducer(nextRootReducer)
 			})
-		}
+		}*/
 		return store
 	},
 
