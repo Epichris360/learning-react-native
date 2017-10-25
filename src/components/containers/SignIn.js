@@ -10,18 +10,20 @@ class SignIn extends Component{
     constructor(props){
         super(props)
         this.state = {
-            email:'', password:''
+            username:'', password:''
         }
     }
     redirectTo(route){
         this.props.history.push(`${route}`)
     }
     signin(){
-        const { email, password } = this.state
-        const user = {email, password}
+        const { username, password } = this.state
+        const user = {username, password}
+
         this.props.signin(user)
         .then(data => {
-            console.log('data',data.user)
+            console.log('data data!!!!',data)
+            return data
         })
         .catch(err => {
             console.log('err',err.message)
@@ -32,8 +34,8 @@ class SignIn extends Component{
             <View style={styles.container} >
                 <Text style={styles.text}>SignIn</Text>
 
-                <FormLabel>Email:</FormLabel>
-                <FormInput keyboardType="email-address" containerStyle={styles.textInput} onChangeText = { text => this.setState({email: text})} />
+                <FormLabel>username:</FormLabel>
+                <FormInput keyboardType="email-address" containerStyle={styles.textInput} onChangeText = { text => this.setState({username: text})} />
                 <FormValidationMessage>This Field is Required!</FormValidationMessage>
 
                 <FormLabel style={{marginTop:15}}>Password:</FormLabel>
@@ -77,7 +79,7 @@ const stateToProps = state => {
 
 const dispatchToProps = dispatch => {
     return{
-        signin: params => dispatch( actions.loginUser(params) )
+        signin: user => dispatch( actions.loginUser(user) )
     }
 }
 

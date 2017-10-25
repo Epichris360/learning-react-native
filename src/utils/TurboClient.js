@@ -97,13 +97,11 @@ const login = (credentials, actionType) => {
 					data: data
 				})
 			}
-
 			return data
 		})
 		.catch(err => {
 			throw err
 		})
-
 }
 
 const currentUser = (actionType) => {

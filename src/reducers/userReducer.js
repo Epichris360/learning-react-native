@@ -10,7 +10,7 @@ const initialState = {
 	
 }
 export default (state = {}, action) => {
-	console.log('hi from the reducer')
+
 	switch (action.type) {
 
 		case constants.CURRENT_USER_RECEIVED:

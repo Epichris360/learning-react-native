@@ -1,10 +1,10 @@
-import { createStore, applyMiddleware, 
-	combineReducers, compose } from 'redux'
-import thunk 				   from 'redux-thunk'
-import { userReducer } 		   from '../reducers'
+import { createStore, applyMiddleware, combineReducers } from 'redux'
+import thunk from 'redux-thunk'
+import { userReducer } from '../reducers'
 
-var store 
+var store
 export default {
+
 	configure: (initialState) => { // initialState can be null
 		
 		const reducers = combineReducers({ // insert reducers here
@@ -14,15 +14,10 @@ export default {
 		if (initialState){
 			store = createStore(
 			    reducers,
-				initialState,
-				applyMiddleware(thunk)
+			    initialState,
+			    applyMiddleware(thunk)
 			)
-			/*if (module.hot) {
-				module.hot.accept(() => {
-					const nextRootReducer = reducers
-					store.replaceReducer(nextRootReducer)
-				})
-			}*/
+
 			return store
 		}
 
@@ -30,12 +25,7 @@ export default {
 		    reducers,
 		    applyMiddleware(thunk)
 		)
-		/*if (module.hot) {
-			module.hot.accept(() => {
-				const nextRootReducer = reducers
-				store.replaceReducer(nextRootReducer)
-			})
-		}*/
+
 		return store
 	},
 
